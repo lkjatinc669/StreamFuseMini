@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/core/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="https://fontawesome.com/favicon.ico" alt="Logo">
+            <div class="text">Login</div>
+            <form action="/login" method="POST">
+                <label for="username">Username</label>
+                <div class="field">
+                    <span class="fa fa-at"></span>
+                    <input type="text" name="username" id="username">
+                </div>
+                <label for="password">Password</label>
+                <div class="field">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" name="password" id="password">
+                </div>
+                <input type="submit" name="submit" value="Login">
+                <p style="margin-top: 12px; text-align: center;">Don't have an account? <a href="/create-account" style="text-decoration: none;">Join Now</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="bottom-toast">
+        <p id="toast-message">There is an error</p>
+        <span id="close-bottom-toast" class="fa fa-close"></span>
+    </div>
+
+    <script src="../static/script.js"></script>
+    <script src="/core/script.js"></script>
+
+    {% if e %}
+    <script>
+        showError("{{ e }}")
+    </script>
+    {% endif %}
+</body>
+
+</html>

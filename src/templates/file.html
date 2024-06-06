@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFuseMini</title>
+    <link rel="stylesheet" href="/core/filestyle.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/filestyle.css">
+    <link rel="stylesheet" href="/core/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">
+            <p>StreamFuseMini</p>
+        </div>
+        <div class="tools">
+            <!-- <i class="bi bi-file-plus"></i> -->
+            <button id="newFolder"><i class="bi bi-folder-plus"></i></button>
+            <button id="viewUploads"><i class="bi bi-upload"></i></button>
+            <!-- <a href="#"><i class="bi bi-archive"></i></a> -->
+            <!-- <button><i class="bi bi-pen"></i></button> -->
+            <form action="/logout" method="POST">
+                <button type="submit"><i class="bi bi-box-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main" id="dropZone">
+        <div id="left" style="display: grid; gap: 12px;">
+            <h1 class="headers">Folders</h1>
+            <div id="folders"></div>
+            <h1 class="headers">Files</h1>
+            <div id="files"></div>
+        </div>
+        <div id="right"></div>
+    </div>
+
+    <div id="uploadinglist">
+        <div class="top">
+            <h1>Uploads</h1>
+            <span id="close-uploads" style="font-size: 20px;" class="bi bi-x"></span>
+        </div>
+        <div id="file_list"></div>
+    </div>
+
+    <div class="boxInput" id="newFolderInput">
+        <h4 style="margin-bottom: 12px;">Create New Folder</h4>
+        <input type="text" id="folderName">
+        <div style="display: flex;">
+            <button style="flex: 1; margin-right: 4px;" id="cancel">Cancel</button>
+            <button style="flex: 1; margin-left: 4px;" id="create">Create</button>
+        </div>
+    </div>
+
+    <div class="boxInput" id="renameFolderInput">
+        <h4 style="margin-bottom: 12px;">Rename Folder</h4>
+        <input type="text" id="renameFolderName">
+        <div style="display: flex;">
+            <button style="flex: 1; margin-right: 4px;" id="renameFolderCancel">Cancel</button>
+            <button style="flex: 1; margin-left: 4px;" id="renameFolderSuccess">Rename</button>
+        </div>
+    </div>
+
+    <div class="boxInput" id="renameFileInput">
+        <h4 style="margin-bottom: 12px;">Rename File</h4>
+        <input type="text" id="renameFileName">
+        <div style="display: flex;">
+            <button style="flex: 1; margin-right: 4px;" id="renameFileCancel">Cancel</button>
+            <button style="flex: 1; margin-left: 4px;" id="renameFileSuccess">Rename</button>
+        </div>
+    </div>
+
+    <div id="bottom-toast">
+        <p id="toast-message">There is an error</p>
+        <span id="close-bottom-toast" style="font-size: 20px;" class="bi bi-x"></span>
+    </div>
+
+    <script src="/core/filescript.js"></script>
+    <script src="../static/filescript.js"></script>
+
+    <!-- <script>
+        showError("HelloWorld");
+    </script> -->
+</body>
+
+</html>
