@@ -235,23 +235,6 @@ class DBHelper:
             print(e)
             return None
 
-    # def getFolderInformation(self, folderid, owner):
-    #     try:
-    #         sql = """ 
-    #         SELECT count(*) as "immediateSubFolders" FROM folder WHERE parentid=? AND owner=? UNION
-    #         SELECT foldername FROM folder WHERE folderid=? AND owner=? UNION
-    #         SELECT count(*) as files FROM file WHERE parentid=? AND owner=?  
-    #         """
-    #         with self.conn:
-    #             cursor = self.conn.cursor()
-    #             cursor.execute(sql, (folderid, owner, folderid, owner, folderid, owner))
-    #             row = cursor.fetchall()
-    #             print(row)
-    #         return True
-    #     except Error as e:
-    #         print(e)
-    #         return False
-
     def recursiveDeleteFolder(self, folderid, owner):
         try:
             sql = "SELECT folderid FROM folder WHERE parentid=? AND owner=?"

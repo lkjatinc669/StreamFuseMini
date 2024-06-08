@@ -85,13 +85,13 @@ const createEachElement = (id, name, icon, type) => {
 
     const streamIcon = document.createElement('i');
     streamIcon.className = 'bi bi-arrow-right';
-    streamIcon.addEventListener("click", () => {
-        if (type === "file") {
-            streamFile(id);
-        } else {
-            streamFolder(id);
-        }
-    });
+    // streamIcon.addEventListener("click", () => {
+    //     if (type === "file") {
+    //         streamFile(id);
+    //     } else {
+    //         streamFolder(id);
+    //     }
+    // });
 
     const penIcon = document.createElement('i');
     penIcon.className = 'bi bi-pen';
@@ -119,7 +119,7 @@ const createEachElement = (id, name, icon, type) => {
     if (type == "file") {
         bottomDiv.appendChild(downloadIcon);
     }
-    bottomDiv.appendChild(streamIcon);
+    // bottomDiv.appendChild(streamIcon);
 
     ffCardDiv.appendChild(h3);
     ffCardDiv.appendChild(folderIcon);
@@ -267,13 +267,17 @@ const renameFileServer = (id, newName) => {
     }
 }
 
+
+
 // Event listener for DOM content loaded to load all files
 window.addEventListener("DOMContentLoaded", () => {
     loadAllFiles();
+    document.getElementById("streamFolder")
+.addEventListener("click", streamFolder)
 })
 
-const streamFolder = (id) => {
-    window.open(`/stream/folder/${id}`, "_blank")
+const streamFolder = () => {
+    window.open(`/stream/folder/${resolveFolder()}`, "_blank")
 }
 
 const streamFile = (id) => {

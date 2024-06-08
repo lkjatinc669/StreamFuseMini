@@ -446,6 +446,7 @@ const loadImages = () => {
                 imgElement.addEventListener('click', () => loadImage(index));
                 imageList.appendChild(imgElement);
             });
+            loadImage(0)
         });
 
     function loadImage(index) {
@@ -473,7 +474,7 @@ const loadImages = () => {
     //     repeatButton.classList.toggle('active', isRepeating);
     // });
 
-    play = true
+    play = false
 
     // playPauseButton.addEventListener('click', () => {
     //     // Logic for play/pause button
